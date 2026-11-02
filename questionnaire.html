@@ -1,0 +1,223 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>線上問卷</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/6/w3.css">
+
+    <style>
+        body {
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+            background-color: #f1f5f9;
+            color: #172B4D;
+        }
+
+        .question {
+            border: 1px solid #b0bec5;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .question p {
+            margin-bottom: 10px;
+        }
+
+        .question label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        .question input,
+        .question select,
+        .question textarea {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 導覽列 -->
+<div class="w3-bar w3-black">
+    <a href="hw2.html" class="w3-bar-item w3-button">首頁</a>
+    <a href="album.html" class="w3-bar-item w3-button">我的相簿</a>
+    <a href="aboutme.html" class="w3-bar-item w3-button">關於我</a>
+    <a href="questionnaire.html" class="w3-bar-item w3-button">問卷表單</a>
+</div>
+
+<!-- 頁首 -->
+<header class="w3-container w3-teal">
+    <h1>無聊的問卷</h1>
+    <p>就很無聊</p>
+</header>
+
+<!-- 問卷內容 -->
+<div class="w3-container w3-content" style="max-width:900px">
+
+    <h2>問卷調查</h2>
+
+    <p>
+        隨便回答！
+    </p>
+
+    <form action="#" method="post">
+
+        <!-- 第1題 是非題 checkbox -->
+        <fieldset class="question">
+            <p><b>1. 您是否睡覺？</b></p>
+            <p>說明：請勾選符合您情況的答案。</p>
+
+            <label>
+                <input type="checkbox" name="q1" value="是">
+                是
+            </label>
+
+            <label>
+                <input type="checkbox" name="q1" value="否">
+                否
+            </label>
+        </fieldset>
+
+        <!-- 第2題 單選 radio -->
+        <fieldset class="question">
+            <p><b>2. 您最常使用哪一種 AI 工具？</b></p>
+            <p>說明：請選擇一個最常使用的工具。</p>
+
+            <label>
+                <input type="radio" name="q2" value="ChatGPT">
+                ChatGPT
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="Gemini">
+                Gemini
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="Copilot">
+                Copilot
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="其他">
+                其他
+            </label>
+        </fieldset>
+
+        <!-- 第3題 單選 select -->
+        <fieldset class="question">
+            <p><b>3. 睡覺要做什麼？</b></p>
+            <p>說明：請從下拉選單中選擇一項。</p>
+
+            <select name="q3" class="w3-select w3-border">
+                <option value="">請選擇</option>
+                <option value="休息">休息</option>
+                <option value="無聊">無聊</option>
+                <option value="打發時間">浪費時間</option>
+            </select>
+        </fieldset>
+
+        <!-- 第4題 複選 checkbox -->
+        <fieldset class="question">
+            <p><b>4. 您睡覺的原因有哪些？</b></p>
+            <p>說明：可複選多個答案。</p>
+
+            <label>
+                <input type="checkbox" name="q4[]" value="節省時間">
+                節省時間
+            </label>
+
+            <label>
+                <input type="checkbox" name="q4[]" value="提高效率">
+                提高學習效率
+            </label>
+
+            <label>
+                <input type="checkbox" name="q4[]" value="無聊">
+                無聊
+            </label>
+
+            
+        </fieldset>
+
+        <!-- 第5題 複選 select -->
+        <fieldset class="question">
+            <p><b>5. 您睡覺時有哪些問題？</b></p>
+            <p>說明：按住 Ctrl 鍵可以選擇多個答案。</p>
+
+            <select name="q5[]" multiple size="5"
+                class="w3-select w3-border">
+                <option value="睡不著">睡不著</option>
+                <option value="熱">太熱</option>
+                <option value="冷">太冷</option>
+                
+            </select>
+        </fieldset>
+
+        <!-- 第6題 文字輸入 text -->
+        <fieldset class="question">
+            <p><b>6. 您最常使用的 AI 工具名稱是什麼？</b></p>
+            <p>說明：請輸入您最常使用的 AI 工具名稱。</p>
+
+            <input type="text" name="q6"
+                class="w3-input w3-border"
+                placeholder="例如：ChatGPT">
+        </fieldset>
+
+        <!-- 第7題 數字 number -->
+        <fieldset class="question">
+            <p><b>7. 您平均每週睡幾次？</b></p>
+            <p>說明：請輸入每週睡覺的次數。</p>
+
+            <input type="number" name="q7"
+                min="0" class="w3-input w3-border"
+                placeholder="請輸入次數">
+        </fieldset>
+
+        <!-- 第8題 日期 date -->
+        <fieldset class="question">
+            <p><b>8. 今天的日期？</b></p>
+            
+
+            <input type="date" name="q8"
+                class="w3-input w3-border">
+        </fieldset>
+
+        <!-- 第9題 問答 textarea -->
+        <fieldset class="question">
+            <p><b>9. 您無聊時可以做什麼？</b></p>
+            <p>說明：請分享您的經驗及個人看法。</p>
+
+            <textarea name="q9" rows="4"
+                class="w3-input w3-border"
+                placeholder="請在這裡輸入您的想法..."></textarea>
+        </fieldset>
+
+        <!-- 按鈕 -->
+        <div class="w3-center w3-padding-16">
+            <button type="submit"
+                class="w3-button w3-teal w3-round">
+                送出
+            </button>
+
+            <button type="reset"
+                class="w3-button w3-red w3-round">
+                重設
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+<!-- 頁尾 -->
+<footer class="w3-container w3-teal w3-center w3-padding-16">
+    <p>線上問卷調查｜感謝您的填寫！</p>
+</footer>
+
+</body>
+</html>
